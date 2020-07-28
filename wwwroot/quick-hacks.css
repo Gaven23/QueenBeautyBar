@@ -1,0 +1,437 @@
+.mu-single-team-img-safari-mobile {
+    display: inline;
+    float: left;
+    width: 25% !important;
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.mu-single-team-safari {
+    background-color: #f6f6f6;
+    display: inline;
+    float: left;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.white {
+    color: #fff !important;
+}
+
+.float-right {
+    float: right;
+}
+
+.text-padding-left {
+    padding-left: 85px;
+}
+
+.gold {
+    color: #806C24 !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.border-right {
+    border-right: 1px solid #110c11;
+}
+
+.center {
+    text-align: center;
+}
+
+.left-align {
+    text-align: left !important;
+    padding-left: 120px !important;
+}
+
+.nav-logo {
+    height: 55px;
+    width: 60px;
+}
+
+.smaller-text, .smaller-text:hover {
+    color: #666666;
+    font-size: 14px;
+}
+
+.text-right {
+    float: right;
+}
+
+.sticky {
+    position: fixed;
+    z-index: 30;
+    display: block !important;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+
+.margin-top {
+    margin-top: 10%;
+}
+
+.about-margin-top {
+    margin-top: 4% !important;
+}
+
+.auto {
+    margin: auto !important;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0 !important;
+}
+
+.boldish {
+    font-weight: 600 !important;
+}
+
+.log-margin-top {
+    margin-top: 3%;
+}
+
+.fleet-margin-top {
+    margin-top: 9%;
+}
+
+.dis-margin-top {
+    margin-top: 7%;
+}
+
+.serv-margin-bottom {
+    margin-bottom: 5% !important;
+}
+
+.log-text-margin-top {
+    margin-top: 2% !important;
+}
+
+.title-margin-bottom {
+    margin-bottom: 7%;
+    margin-top: 2%;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+.align {
+    text-align: justify;
+}
+
+.margin-bottom-overide {
+    margin-bottom: 30px !important;
+}
+
+.li-margin-bottom {
+    margin-bottom: 15px !important;
+}
+
+.p-margin-bottom {
+    margin-bottom: 10px !important;
+}
+
+.standard-font-size {
+    font-size: 15px !important;
+}
+
+.serv-list {
+    list-style-type: disc !important;
+}
+
+.serv-list-item {
+    list-style-type: disc !important;
+    list-style-position: inside !important;
+}
+
+.toaster {
+    /* height: 100px; */
+    width: 100%;
+    color: #fff;
+    background-color: #E429FF;
+    padding-bottom: 2px;
+    padding-top: 28px;
+    text-align: center;
+    font-size: 17px;
+    
+}
+
+    .toaster p {
+        /* padding: 0 !important; */
+    }
+
+
+/* button hacks */
+.smaller-btn {
+    font-size: 18px !important;
+    padding: 13px 45px !important;
+}
+
+/* Services Flip Cards */
+.services-page {
+    margin: 8% 0 !important;
+}
+
+.card-holder {
+    width: 100%;
+    margin: 3% 0;
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 220px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+}
+
+.flip-card:hover .flip-card-front {
+    display: none;
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.flip-card-front {
+    color: #bbb;
+    /* opacity: 0.8; */
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    display: block !important;
+    background-color: #fff !important;
+    color: #7C0E5D;
+    transform: rotateY(180deg);
+    padding: 30px 10px;
+    border: solid #7C0E5D 2px;
+    z-index: 100000;
+    backface-visibility: hidden;
+}
+
+.layer {
+    background-color: rgba(000, 000, 000, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.back-layer {
+    background-color: white !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Services page */
+.services-page {
+    color: #666666 !important;
+}
+
+.service-margin-top {
+    margin-top: 5%;
+}
+
+.service-name {
+    position: absolute;
+    color: #fff;
+}
+
+.services-img-holder {
+    height: 250px;
+    opacity: 0.85;
+}
+
+#distribution-card {
+    text-align: center;
+    background: url('./Queenz/facial...jpg');
+    background-size: cover;
+}
+
+.distribution-margin-top {
+    margin-top: 8%;
+}
+
+.card-shadow {
+    -webkit-box-shadow: 0px 0px 8px 3px rgba(181,179,181,1);
+    -moz-box-shadow: 0px 0px 8px 3px rgba(181,179,181,1);
+    box-shadow: 0px 0px 8px 3px rgba(181,179,181,1);
+}
+
+#logistics-card {
+    text-align: center;
+    background: url('./Queenz/spa-3184610_1920 (1).jpg');
+    background-size: cover;
+}
+
+.logistics-margin-top {
+    margin-top: 18%;
+}
+
+#fleet-card {
+    text-align: center;
+    background: url('./images/beauty-2537562_1920.jpg');
+    background-size: cover;
+}
+
+#dist-card {
+    text-align: center;
+    background: url('./images/Nails.PNG');
+    background-size: cover;
+}
+
+.card-header-title {
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+.serv-card-desc {
+    font-size: 14px;
+    backface-visibility: hidden;
+}
+
+.log-margin {
+    margin: 40% 35%;
+}
+
+.dis-margin {
+    margin: 40% 30%;
+}
+
+.fleet-margin {
+    margin: 40% 15%;
+}
+
+.ware-margin {
+    margin: 40% 12%;
+}
+
+.pre {
+    background-color: #fff !important;
+    border: 0 !important;
+    padding: 0 !important;
+    color: #666666 !important;
+    font-size: 15px !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    font-weight: normal !important;
+    font-family: 'Raleway', sans-serif;
+}
+
+.mar {
+    margin-top: -2% !important;
+}
+
+.footer-contact-link {
+    /* line-height: 1.5 !important; */
+    margin-top: -5px !important;
+    margin-bottom: 4px !important;
+    font-size: 14px !important;
+}
+
+/* images */
+.landing-image {
+    height: 90vh;
+    width: 100%;
+}
+
+.mobile-landing-container {
+    display: none;
+}
+
+/* about cards */
+
+.about-card {
+    border: solid #806C24 2px;
+    padding: 40px 35px;
+    height: 360px;
+    margin-bottom: 5%;
+}
+
+.about-team-img {
+    width: 60% !important;
+}
+
+/* pop message */
+
+.pop-up-container {
+    width: 50%;
+    position: absolute;
+    z-index: 200;
+    margin: 10% 25%;
+    background-color: #806C24;
+    padding: 50px;
+    color: #fff;
+    transition: all 50000s ease;
+}
+
+.cancel {
+    position: relative;
+    margin-right: -20px;
+    margin-top: -30px;
+    float: right;
+    color: #000;
+    opacity: .5;
+}
+
+.hide {
+    display: none !important;
+}
+
+.pop-up-left {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.pop-up-icon {
+    width: 170px;
+    height: 150px;
+    opacity: 0.8;
+}
+
+.pop-up-message-bottom {
+    font-size: 13px;
+}
+
+.pop-up-content {
+    width: 90%;
+    margin: auto;
+    text-align: justify;
+}
+
+/* contact page */
+
+.select {
+    background-color: #fff;
+    box-shadow: none;
+}

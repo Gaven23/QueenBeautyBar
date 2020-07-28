@@ -1,0 +1,246 @@
+﻿@model QueenBeautyBar.Data.Appointments
+@{
+    ViewData["Title"] = "Contact";
+}
+<div class="toaster">
+    <p>We are currently operating under Lockdown Level 3 for Our Health and Beauty Spa Services.</p>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Slick slider -->
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <!-- Gallery Lightbox -->
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <!-- Skills Circle CSS  -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/circlebars@1.0.3/dist/circle.css">
+
+    <script src="https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key"></script>
+
+
+    <!-- Main Style -->
+    <link href="style.css" rel="stylesheet">
+    <link href="quick-hacks.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <!-- Google Fonts Raleway -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,500i,600,700" rel="stylesheet">
+    <!-- Google Fonts Open sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+
+
+
+    <!-- End Header -->
+    <!-- Start main content -->
+    <main>
+        <!-- Start Contact -->
+        <section id="mu-contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mu-contact-area">
+                            <!-- Title -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="mu-title margin-top mobile-margin-top">
+                                        <h2>Get in touch with us</h2>
+                                        <p>
+                                            Got a question ? Feedback? Awesome! <br>
+                                            Tell us about your wellness needs or just say hello. Whether you need a simple spa treatment or SPArty, we are here to deliver the Wellness Revolution.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Start Contact Content -->
+                            <div class="mu-contact-content">
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="mu-contact-form-area">
+                                            <div id="form-messages"></div>
+                                            <form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
+
+                                                <div class="form-group">
+                                                    <span class="fa fa-user mu-contact-icon" style="color:#7C0E5D;"></span>
+                                                    <input type="text" class="form-control" placeholder="Name" id="name" name="name" required>
+                                                </div>
+                                                @*<div class="form-group">
+                                                        <span class="fa fa- mu-contact-icon" style="color:#FF1493;"></span>
+                                                        <input type="text" asp-for="Date" class="form-control" placeholder="Date" id="name" name="name" required>
+                                                    </div>*@
+                                                <div class="form-group">
+                                                    <span asp-validation-for="Date" style="color:#7C0E5D;" class="text-danger"></span>
+                                                    <input asp-for="Date" class="form-control" placeholder="Date" />
+
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <span class="fa fa-envelope mu-contact-icon" style="color:#7C0E5D;"></span>
+                                                    <input type="email" class="form-control" placeholder="Email Address" id="email" name="email" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span class="fa fa-phone mu-contact-icon" style="color:#7C0E5D;"></span>
+                                                    <input type="text" class="form-control" placeholder="Phone Number" id="Number" name="Number" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <span class="fa fa-folder-open-o mu-contact-icon" style="color:#7C0E5D;"></span>
+
+                                                    <select class="form-control" id="subject" required>
+                                                        <option value="" selected disabled hidden>Services</option>
+                                                        <option value="Threpy and Body Massge">Threpy and Body Massge</option>
+                                                        <option value="Nails & Manicure">Nails & Manicure</option>
+                                                        <option value="Beauty & Make up">Beauty & Make up</option>
+                                                        @*<option value="Distribution Centers">Distribution Centers</option>*@
+                                                    </select>
+
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <span class="fa fa-pencil-square-o mu-contact-icon" style="color:#7C0E5D;"></span>
+
+                                                </div>
+                                                <div class="g-recaptcha">
+
+                                                </div>
+                                                <button type="submit" class="mu-send-msg-btn" style="background: #7C0E5D;"><span>Send Message</span></button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- End Contact Content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact -->
+        <!-- Google map -->
+        <div id="mu-google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28621.633536298923!2d27.860150632029118!3d-26.271262288097784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95a712b2f750d7%3A0xcde9e5ef2f7f6d3d!2sMaponya%20Mall!5e0!3m2!1sen!2sza!4v1588757881871!5m2!1sen!2sza" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+
+
+    </main>
+
+    <!-- End footer -->
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <!-- Slick slider -->
+    <script type="text/javascript" src="assets/js/slick.min.js"></script>
+    <!-- Progress Bar -->
+    <script src="https://unpkg.com/circlebars@1.0.3/dist/circle.js"></script>
+    <!-- Filterable Gallery js -->
+    <script type="text/javascript" src="assets/js/jquery.filterizr.min.js"></script>
+    <!-- Gallery Lightbox -->
+    <script type="text/javascript" src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Counter js -->
+    <script type="text/javascript" src="assets/js/counter.js"></script>
+    <!-- Ajax contact form  -->
+    <script type="text/javascript" src="assets/js/app.js"></script>
+
+
+    <!-- Custom js -->
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+
+
+
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6Lfv3PMUAAAAADGhZPuvWyUe_U_u5KzRKlOMWsYY', { action: 'homepage' }).then(function (token) {
+            });
+        });
+    </script>
+
+    <!-- About us Skills Circle progress  -->
+    <script>
+        // First circle
+        new Circlebar({
+            element: "#circle-1",
+            type: "progress",
+            maxValue: "90"
+        });
+
+        // Second circle
+        new Circlebar({
+            element: "#circle-2",
+            type: "progress",
+            maxValue: "84"
+        });
+
+        // Third circle
+        new Circlebar({
+            element: "#circle-3",
+            type: "progress",
+            maxValue: "60"
+        });
+
+        // Fourth circle
+        new Circlebar({
+            element: "#circle-4",
+            type: "progress",
+            maxValue: "74"
+        });
+
+    </script>
+
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+            // ]]>
+    </script>
+</body>
+</html>

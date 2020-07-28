@@ -1,0 +1,266 @@
+﻿
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor sessionAccessor;
+@{
+    int roleID = 0;             //  assume 0 in case of guest (before users has logged in)
+
+    if (Convert.ToInt32(sessionAccessor.HttpContext.Session.GetString("roleID")) > 0)
+    {
+        roleID = Convert.ToInt32(sessionAccessor.HttpContext.Session.GetString("roleID"));
+    }
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] | Queenz Beauty Bar </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/gallery.css" />
+    <link rel="stylesheet" href="~/css/slick.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/quick-hacks.css" />
+    <script src="https://kit.fontawesome.com/3051aeb07b.js" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/slick.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="~/css/carousel.css/">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Slick slider -->
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <!-- Gallery Lightbox -->
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <!-- Skills Circle CSS  -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/circlebars@1.0.3/dist/circle.css">
+
+    <!-- Animation CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/animation.css">
+
+    <!-- Main Style -->
+    <link href="style.css" rel="stylesheet">
+
+
+
+
+    <script src="https://kit.fontawesome.com/3051aeb07b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    
+
+    <header>
+        <nav class="navbar navbar-expand-lg
+        fixed-top  navbar-dark" style="background-color:#fff;">
+            <h4 class="navbar-brand" href="/"><img src="~/Queenz/Queens Logo Svg File.svg"  height="55" alt="mdb logo"> </h4>
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse w-40 order-3 dual-collapse2 a" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto ">
+                    <li class="nav-item active" id="a">
+                        <a id="a" class="nav-link  text-dark" asp-area="" asp-controller="Home" asp-action="Index"><strong>HOME</strong></a>
+                    </li>
+                    <li class="nav-item" id="a">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SALON"><strong>SALON & SPA</strong></a>
+                    </li>
+                    <li class="nav-item" id="a">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Appointments" asp-action="Create"><strong>APPOINTMENT</strong></a>
+                    </li>
+                    <li class="nav-item dropdown text-dark" id="a">
+                        <a class="nav-link dropdown-toggle text-dark" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>QUEENZ BEAUTY BAR</strong></a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item  text-dark  " asp-controller="Home" asp-action="About">ABOUT</a>
+                            <a class="dropdown-item text-dark " asp-controller="Home" asp-action="Gallery">GALLERY</a>
+                            <a class="dropdown-item  text-dark" asp-controller="Home" asp-action="Contact">CONTACT US</a>
+                        </div>
+                    </li>
+
+                    @if (roleID == 2)
+                    {
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>SETUP</strong></a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+
+
+                                <a class="dropdown-item " asp-controller="Users" asp-action="Index">ACCOUNTS</a>
+
+                                <a class="dropdown-item " asp-controller="Appointments" asp-action="Index">APPOINTMENT</a>
+
+                            </div>
+                        </li>
+
+
+
+
+
+                    }
+
+
+
+
+
+                    <li class="nav-item ">
+                        <a class="nav-link " href="~/Login/" title="Sign In"><i class="fas fa-2x fa-user-circle" style="color:#E429FF"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+
+        </nav>
+        <div class="toaster">
+            <p>We are currently operating under Lockdown Level 3 for Distribution, Logistics and Fleet Management.</p>
+        </div>
+    </header>
+
+    <div class="container-fullwidth">
+       
+        @RenderBody()
+
+    </div>
+    <footer id="mu-footer">
+        <div class="mu-footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mu-single-footer">
+                            <h2><a class="mu-logo white" href="index.html"><span>Queenz Beauty Bar</span></a></h2>
+                            <p>
+                                The core of our business is that we ignite the beauty from within by first understanding your specific beauty and relaxation requirements and motivation. From a simple wash-and-go to the extensive self-love combo treatment, the Afroroots experience aims to leave you refreshed and rejuvenated.
+
+                                We have created a space where men, women and the youth can come and reward themselves with the ever so deserved “ME-time” quality pampering whilst forgetting about everyday hustles that leave them tired and weary
+                                <div class="mu-social-media">
+                                    <a href="https://www.facebook.com/ikgabo"><i class="fa fa-facebook"></i></a>
+                                    <a class="mu-twitter" href="https://www.instagram.com/ikgabo_distribution"><i class="fa fa-twitter"></i></a>
+                                    <a class="mu-pinterest" href="https://www.instagram.com/ikgabo_distribution"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    <a class="mu-youtube" href="#"><i class="fa fa-youtube"></i></a>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="mu-single-footer center">
+                            <h3>Useful link</h3>
+                            <ul class="mu-useful-links left-align">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <!-- <li><a href="#">Careers</a></li> -->
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mu-single-footer">
+                            <h3>Contact Information</h3>
+                            <ul class="list-unstyled">
+                                <li class="media">
+                                    <span class="fa fa-home"></span>
+                                    <div class="media-body">
+                                        <p>
+                                            59 Clinton Street, New Redruth, Alberton, Johannesburg, 1709
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <span class="fa fa-phone"></span>
+                                    <div class="media-body">
+                                        <p>+27 (63) 602-9173</p>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <span class="fa fa-envelope"></span>
+                                    <div class="media-body">
+                                        <p>info@queenbb.co.za</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mu-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mu-footer-bottom-area">
+                            <p class="mu-copy-right">&copy; Copyright <a rel="nofollow" href="https://www.lebonemedia.co.za/">GavenTech Coorporations</a>. All right reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    @*<footer class="navbar-dark  pt-5 pb-5" style="background-color:#8B008B">
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4" style="color: rgba(255,255,255,0.9);">
+                            <h3 style="font-family: 'Bree Serif', serif;">
+                                QUEENZ BEAUTY BAR
+
+                            </h3>
+                            <p class="pt-4" style="font-family: 'Abel', sans-serif; font-size: 15px;">
+        The core of our business is that we ignite the beauty from within by first understanding your specific beauty and relaxation requirements and motivation. From a simple wash-and-go to the extensive self-love combo treatment, the Afroroots experience aims to leave you refreshed and rejuvenated.
+
+        We have created a space where men, women and the youth can come and reward themselves with the ever so deserved “ME-time” quality pampering whilst forgetting about everyday hustles that leave them tired and weary
+                            </p>
+                        </div>
+                        <div class="col-sm-12 col-md-4" style="color: rgba(255,255,255,0.9);">
+                            <h3 style="font-family: 'Bree Serif', serif;">Gauteng</h3>
+                            <address class="lead pt-4">
+                                <strong>Alberton</strong><br />
+                                53 Second Avanue<br />
+                                Alberton North<br />
+
+                                1450
+                            </address>
+                        </div>
+                        <div class="col-sm-12 col-md-4" style="color: rgba(255,255,255,0.9);">
+                            <h3 style="font-family: 'Bree Serif', serif;">Contact Details</h3>
+                            <address class="lead pt-4">
+                                <strong>Email</strong><br />
+                                <a style="color: rgba(255,255,255,0.9);" href="mailto:info@nikiwenono.co.za">info@nikiwenono.co.za</a><br />
+                                <br />
+                                <strong>Phone</strong><br />
+                                +27 (0)73 945 8179<br />
+                                +27 (0)71 483 4856<br />
+                                <br />
+                                <strong>Hours</strong><br />
+                                Monday—Friday: 07:00AM–05:00PM
+                            </address>
+                        </div>
+
+                    </div>
+                    <hr style="border-color: rgba(255,255,255,0.9);" />
+                    <div class="row">
+                        <div class="col-sm-12"style="color: #FF1493"><strong>
+            Copyright &copy; 2019 - QUEENZ BEAUTY BAR SALON  PTY (Ltd)
+                        </div>
+                    </div>
+                </div>
+            </footer>*@
+
+
+
+
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
