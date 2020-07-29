@@ -281,11 +281,6 @@
     margin-top: 8%;
 }
 
-.card-shadow {
-    -webkit-box-shadow: 0px 0px 8px 3px rgba(181,179,181,1);
-    -moz-box-shadow: 0px 0px 8px 3px rgba(181,179,181,1);
-    box-shadow: 0px 0px 8px 3px rgba(181,179,181,1);
-}
 
 #logistics-card {
     text-align: center;
@@ -431,7 +426,3 @@
 
 /* contact page */
 
-.select {
-    background-color: #fff;
-    box-shadow: none;
-}
