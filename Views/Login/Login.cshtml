@@ -43,7 +43,13 @@
                 <input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
                 <label class="check" for="check3">Show password</label>
             </div>
-            <!-- script for show password -->
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" name="Password" placeholder="Enter Password" required="" id="myInput" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
+                <label class="check" for="check3">Show password</label>
+            </div>
             <script>
                 function myFunction() {
                     var x = document.getElementById("myInput");

@@ -153,16 +153,20 @@
     width: 100%;
     color: #fff;
     background-color: #E429FF;
-    padding-bottom: 2px;
-    padding-top: 28px;
+    
+    padding: 15px;
     text-align: center;
     font-size: 17px;
     
 }
 
-    .toaster p {
-        /* padding: 0 !important; */
-    }
+.toasterText{
+    margin: auto;
+}
+
+.toaster p {
+    /* padding: 0 !important; */
+}
 
 
 /* button hacks */
@@ -188,6 +192,7 @@
     width: 250px;
     height: 220px;
     perspective: 1000px;
+    margin: auto;
 }
 
 .flip-card-inner {
